@@ -69,7 +69,7 @@ public class StatsPerBook {
 				wholeText=sb.toString();
 				if (aTraiter=true){
 					try {
-						File fileTrans =new File("./FichiersThomas/"+file.getName());
+						File fileTrans =new File("./Fichiers/"+file.getName());
 						FileWriter writer = new FileWriter(fileTrans);
 						writer.write(wholeText);
 						writer.flush();
