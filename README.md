@@ -7,10 +7,10 @@ Voici les prémices du code qui vous permet d'établir des profils de courbes en
 
 Avant tout :
 
-    avoir Java 7 minimum installé,
-    avoir Python 3 installé, avec notamment la librairie matplotlib
+   -avoir Java 7 minimum installé,
+   -avoir Python 3 installé, avec notamment la librairie matplotlib
 
-Première étape : génération des données avec vos textes :
+1. Première étape : génération des données avec vos textes :
 
 Pour comparer vos données, l'ordinateur va avoir besoin de les rendre interprétables : il va tokéniser les textes, évaluer la taille des chapitres et la masse de mots dans chacun des chapitres, et rendre l'ensemble des données comparables entre elles en transformant le nombre de mots relatif des chapitres pour chaque roman en pourcentages. Par exemple, pour comparer un roman R1 de quatre chapitres et un autre R2 de vingt-cinq chapitres, et voir comment évolue la masse des mots pour chaque roman (savoir si les chapitres du début sont plus courts dans l'un, etc.), R1 qui aura 10 mots sur 100 totaux au chapitre 1 comprendra comme donnée 10% de mots à 25% du roman, et R2 qui aura 100 mots sur 1000 au chapitre 20 aura 10% à 80% du roman.
 
@@ -23,24 +23,28 @@ Ce calcul se fait en Java, et le code temporaire que nous avons n'appelle pas en
 
 Vous vous retrouvez donc normalement avec un dossier de fichiers générés dans le dossier "build", intitulé "CSVOutput". Si vous souhaitez que j'ajoute une option pour que vous puissiez choisir votre chemin de sortie (l'endroit où vous allez recevoir les nouveaux fichiers générés), n'hésitez pas à me le dire.
 
-Deuxième étape : Time Series Clustering (ou création de groupes de courbes)
+2. Deuxième étape : Time Series Clustering (ou création de groupes de courbes)
 
 C'est là que Python est utile. Avec le programme en python suivant, qui sera bientôt intégré au java précédent (ce qui fera une étape en moins), vous allez créer des profils de courbes. Autrement dit, vous allez fournir des données individuelles obtenues avec les fichiers générés précédemment, et lui demander de trouver leurs points communs, et comment ses données peuvent être regroupées et comparées. Pour plus de détails sur le procédé, voir le billet ici.
 
 Tous les fichiers dont vous avez besoin sont déjà dans le dossier téléchargé depuis github. Il vous suffit cette fois de faire deux choses :
 
-    aller dans le dossier "Python" qui est dans le dossier du projet téléchargé, ouvrir le dossier "datasets" et remplacer le fichier déjà présent "output.csv" par celui que vous venez de générer lors de l'étape précédente. Même chose pour le fichier "names.txt".
-    exécuter les commandes suivantes :
+   -aller dans le dossier "Python" qui est dans le dossier du projet téléchargé, ouvrir le dossier "datasets" et remplacer le fichier déjà présent "output.csv" par celui que vous venez de générer lors de l'étape précédente. Même chose pour le fichier "names.txt".
+    -exécuter les commandes suivantes :
         (si vous êtes toujours dans votre terminal et que vous n'avez pas changé de chemin de fichiers entre temps)
-            cd Python
+            
+			cd Python
         OU si vous avez changé de chemin ou éteint votre terminal,
-            cd /votreBrancheUtilisateur/votreNomUtilisateur/leFichierOuVousAvezTelechargelLeProjet/build/Python
+		
+    		cd /votreBrancheUtilisateur/votreNomUtilisateur/leFichierOuVousAvezTelechargelLeProjet/build/
+	
         une fois dans le dossier "Python", vous pouvez exécuter la commande suivante :
-            python3 CurveMatching.py
+            
+			python3 CurveMatching.py
 
 Vous vous retrouvez alors avec vos profils de courbes dynamiques (zoom possible, export en différents formats etc.).
 
-Configuration du fichier .py :
+3. Configuration du fichier .py :
 
 Par défaut, le fichier python CurveMatching.py est configuré pour une analyse lourde (très lourde) des données, que je vous déconseille d'exécuter si votre ordinateur est déjà naturellement lent. Par défaut, sur une grosse machine, tel que le fichier est configuré, l'analyse met presque quinze minutes.
 
