@@ -12,16 +12,16 @@ Avant tout :
 
 1. Première étape : génération des données avec vos textes :
 
-Pour comparer vos données, l'ordinateur va avoir besoin de les rendre interprétables : il va tokéniser les textes, évaluer la taille des chapitres et la masse de mots dans chacun des chapitres, et rendre l'ensemble des données comparables entre elles en transformant le nombre de mots relatif des chapitres pour chaque roman en pourcentages. Par exemple, pour comparer un roman R1 de quatre chapitres et un autre R2 de vingt-cinq chapitres, et voir comment évolue la masse des mots pour chaque roman (savoir si les chapitres du début sont plus courts dans l'un, etc.), R1 qui aura 10 mots sur 100 totaux au chapitre 1 comprendra comme donnée 10% de mots à 25% du roman, et R2 qui aura 100 mots sur 1000 au chapitre 20 aura 10% à 80% du roman.
+	Pour comparer vos données, l'ordinateur va avoir besoin de les rendre interprétables : il va tokéniser les textes, 	évaluer la taille des chapitres et la masse de mots dans chacun des chapitres, et rendre l'ensemble des données comparables entre elles en transformant le nombre de mots relatif des chapitres pour chaque roman en pourcentages. Par exemple, pour comparer un roman R1 de quatre chapitres et un autre R2 de vingt-cinq chapitres, et voir comment évolue la masse des mots pour chaque roman (savoir si les chapitres du début sont plus courts dans l'un, etc.), R1 qui aura 10 mots sur 100 totaux au chapitre 1 comprendra comme donnée 10% de mots à 25% du roman, et R2 qui aura 100 mots sur 1000 au chapitre 20 aura 10% à 80% du roman.
 
-Ce calcul se fait en Java, et le code temporaire que nous avons n'appelle pas encore le script Python suivant (mais ça ne saurait tarder). Vous pouvez télécharger le paquet ici. Vous devez placer vos textes en .txt dans le dossier "Fichiers"du dossier où a été compilé le .jar, c'est-à-dire le dossier "build". Ensuite, si vous n'avez pas d'IDE comme Eclipse ou NetBeans préinstallés, vous devez aller dans votre terminal et entrer les commandes suivantes  (je fais sous Linux, mais je mets les commandes théoriques, sans les avoir testées, de mac et windows, qui normalement sont les mêmes que celles de Linux ici) :
+	Ce calcul se fait en Java, et le code temporaire que nous avons n'appelle pas encore le script Python suivant (mais ça ne saurait tarder). Vous pouvez télécharger le paquet ici. Vous devez placer vos textes en .txt dans le dossier "Fichiers"du dossier où a été compilé le .jar, c'est-à-dire le dossier "build". Ensuite, si vous n'avez pas d'IDE comme Eclipse ou NetBeans préinstallés, vous devez aller dans votre terminal et entrer les commandes suivantes  (je fais sous Linux, mais je mets les commandes théoriques, sans les avoir testées, de mac et windows, qui normalement sont les mêmes que celles de Linux ici) :
 
     cd /votreBrancheUtilisateur/votreNomUtilisateur/leFichierOuVousAvezTelechargelLeProjet/build/
     java -jar curveMatching.jar
 
-(En gros ici, dans la première commande vous dites à votre ordinateur d'aller prendre les données d'un dossier précis, puis vous lui demandez d'interpréter le fichier .jar avec un interpréteur Java)
+	(En gros ici, dans la première commande vous dites à votre ordinateur d'aller prendre les données d'un dossier précis, puis vous lui demandez d'interpréter le fichier .jar avec un interpréteur Java)
 
-Vous vous retrouvez donc normalement avec un dossier de fichiers générés dans le dossier "build", intitulé "CSVOutput". Si vous souhaitez que j'ajoute une option pour que vous puissiez choisir votre chemin de sortie (l'endroit où vous allez recevoir les nouveaux fichiers générés), n'hésitez pas à me le dire.
+	Vous vous retrouvez donc normalement avec un dossier de fichiers générés dans le dossier "build", intitulé "CSVOutput". Si vous souhaitez que j'ajoute une option pour que vous puissiez choisir votre chemin de sortie (l'endroit où vous allez recevoir les nouveaux fichiers générés), n'hésitez pas à me le dire.
 
 2. Deuxième étape : Time Series Clustering (ou création de groupes de courbes)
 
