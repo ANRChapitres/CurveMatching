@@ -26,7 +26,7 @@ public class ExportToCSV {
 
 			FileWriter writer = new FileWriter(file);
 			StringBuilder sbNames=new StringBuilder();
-			for (int count=0; count<3; count++){
+			for (int count=0; count<4; count++){
 
 
 				for (Entry <String,List<float []>>entry:stats.entrySet()){
