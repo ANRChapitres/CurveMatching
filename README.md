@@ -16,8 +16,8 @@ Avant tout :
 
 	Ce calcul se fait en Java, et le code temporaire que nous avons n'appelle pas encore le script Python suivant (mais ça ne saurait tarder). Vous pouvez télécharger le paquet ici. Vous devez placer vos textes en .txt dans le dossier "Fichiers"du dossier où a été compilé le .jar, c'est-à-dire le dossier "build". Ensuite, si vous n'avez pas d'IDE comme Eclipse ou NetBeans préinstallés, vous devez aller dans votre terminal et entrer les commandes suivantes  (je fais sous Linux, mais je mets les commandes théoriques, sans les avoir testées, de mac et windows, qui normalement sont les mêmes que celles de Linux ici) :
 
-    cd /votreBrancheUtilisateur/votreNomUtilisateur/leFichierOuVousAvezTelechargelLeProjet/build/
-    java -jar curveMatching.jar
+    	cd /votreBrancheUtilisateur/votreNomUtilisateur/leFichierOuVousAvezTelechargelLeProjet/build/
+    	java -jar curveMatching.jar
 
 	(En gros ici, dans la première commande vous dites à votre ordinateur d'aller prendre les données d'un dossier précis, puis vous lui demandez d'interpréter le fichier .jar avec un interpréteur Java)
 
