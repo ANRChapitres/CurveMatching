@@ -21,7 +21,7 @@ public class StatsPerBook {
 		
 		HashMap<String, List<String[]>> mapDesOeuvres=new HashMap<String, List<String[]>>();
 		
-		File folder = new File("./FichiersT");
+		File folder = new File("./Fichiers");
 		File repertoire[]=folder.listFiles();
 		for (File file:repertoire){
 			if (file.getName().contains(".txt")){
