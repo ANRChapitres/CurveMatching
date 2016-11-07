@@ -3,6 +3,8 @@
 
 Chers utilisateurs,
 
+D'abord je tiens à signaler que j'ai adapté un code très utile déjà existant pour le script Python : http://alexminnaar.com/time-series-classification-and-clustering-with-python.html
+
 Voici les prémices du code qui vous permet d'établir des profils de courbes en fonction des chapitres d'un groupe de textes. Nous avons testé ces outils sur les œuvres de Zola. Pour les utiliser (c'est encore une version bêta), voilà comment faire :
 
 Avant tout :
