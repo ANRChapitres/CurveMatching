@@ -26,9 +26,7 @@ public class ExportToCSV {
 
 			FileWriter writer = new FileWriter(file);
 			StringBuilder sbNames=new StringBuilder();
-			for (int count=0; count<4; count++){
-
-
+			for (int count=0;count<3; count++){
 				for (Entry <String,List<float []>>entry:stats.entrySet()){
 					float[]pourcentage=new float[101];
 					for (float[] percents:entry.getValue()){
@@ -75,17 +73,16 @@ public class ExportToCSV {
 					sbNames.append(nameForFile+" ");
 				}
 			}
-
-			writer.flush();
-			writer.close();
-			writer=new FileWriter(fileNames);
-			writer.write(sbNames.toString());
-			writer.flush();
-			writer.close();
+						writer.flush();
+						writer.close();
+						writer=new FileWriter(fileNames);
+						writer.write(sbNames.toString());
+						writer.flush();
+						writer.close();
+			}
+			catch(IOException e)
+			{
+				e.printStackTrace();
+			} 
 		}
-		catch(IOException e)
-		{
-			e.printStackTrace();
-		} 
 	}
-}
