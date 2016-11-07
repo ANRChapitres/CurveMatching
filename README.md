@@ -31,14 +31,15 @@ Avant tout :
 
    -aller dans le dossier "Python" qui est dans le dossier du projet téléchargé, ouvrir le dossier "datasets" et remplacer le fichier déjà présent "output.csv" par celui que vous venez de générer lors de l'étape précédente. Même chose pour le fichier "names.txt".
     -exécuter les commandes suivantes :
-        (si vous êtes toujours dans votre terminal et que vous n'avez pas changé de chemin de fichiers entre temps)
+      (si vous êtes toujours dans votre terminal et que vous n'avez pas changé de chemin de fichiers entre temps)
             
 			cd Python
-        OU si vous avez changé de chemin ou éteint votre terminal,
+			
+      OU si vous avez changé de chemin ou éteint votre terminal,
 		
     		cd /votreBrancheUtilisateur/votreNomUtilisateur/leFichierOuVousAvezTelechargelLeProjet/build/
 	
-        une fois dans le dossier "Python", vous pouvez exécuter la commande suivante :
+      une fois dans le dossier "Python", vous pouvez exécuter la commande suivante :
             
 			python3 CurveMatching.py
 
