@@ -25,9 +25,9 @@ Avant tout :
 
 2. Deuxième étape : Time Series Clustering (ou création de groupes de courbes)
 
-C'est là que Python est utile. Avec le programme en python suivant, qui sera bientôt intégré au java précédent (ce qui fera une étape en moins), vous allez créer des profils de courbes. Autrement dit, vous allez fournir des données individuelles obtenues avec les fichiers générés précédemment, et lui demander de trouver leurs points communs, et comment ses données peuvent être regroupées et comparées. Pour plus de détails sur le procédé, voir le billet ici.
+	C'est là que Python est utile. Avec le programme en python suivant, qui sera bientôt intégré au java précédent (ce qui fera une étape en moins), vous allez créer des profils de courbes. Autrement dit, vous allez fournir des données individuelles obtenues avec les fichiers générés précédemment, et lui demander de trouver leurs points communs, et comment ses données peuvent être regroupées et comparées. Pour plus de détails sur le procédé, voir le billet ici.
 
-Tous les fichiers dont vous avez besoin sont déjà dans le dossier téléchargé depuis github. Il vous suffit cette fois de faire deux choses :
+	Tous les fichiers dont vous avez besoin sont déjà dans le dossier téléchargé depuis github. Il vous suffit cette fois de faire deux choses :
 
    -aller dans le dossier "Python" qui est dans le dossier du projet téléchargé, ouvrir le dossier "datasets" et remplacer le fichier déjà présent "output.csv" par celui que vous venez de générer lors de l'étape précédente. Même chose pour le fichier "names.txt".
     -exécuter les commandes suivantes :
@@ -42,16 +42,16 @@ Tous les fichiers dont vous avez besoin sont déjà dans le dossier télécharg�
             
 			python3 CurveMatching.py
 
-Vous vous retrouvez alors avec vos profils de courbes dynamiques (zoom possible, export en différents formats etc.).
+	Vous vous retrouvez alors avec vos profils de courbes dynamiques (zoom possible, export en différents formats etc.).
 
 3. Configuration du fichier .py :
 
-Par défaut, le fichier python CurveMatching.py est configuré pour une analyse lourde (très lourde) des données, que je vous déconseille d'exécuter si votre ordinateur est déjà naturellement lent. Par défaut, sur une grosse machine, tel que le fichier est configuré, l'analyse met presque quinze minutes.
+	Par défaut, le fichier python CurveMatching.py est configuré pour une analyse lourde (très lourde) des données, que je vous déconseille d'exécuter si votre ordinateur est déjà naturellement lent. Par défaut, sur une grosse machine, tel que le fichier est configuré, l'analyse met presque quinze minutes.
 
-Si vous avez besoin de résultats rapides, voici ce que vous devez changer dans le fichier .py (c'est très simple). Ouvrez le fichier .py avec n'importe quel éditeur de texte (brut de préférence) en faisant un clic-droit dessus. Vous vous retrouvez avec le code principal sous les yeux. Recherchez la ligne suivante :
+	Si vous avez besoin de résultats rapides, voici ce que vous devez changer dans le fichier .py (c'est très simple). Ouvrez le fichier .py avec n'importe quel éditeur de texte (brut de préférence) en faisant un clic-droit dessus. Vous vous retrouvez avec le code principal sous les yeux. Recherchez la ligne suivante :
 
-"mapOfTimeSeries=k_means_clust(data, namesArray,10,200,100)".
+	"mapOfTimeSeries=k_means_clust(data, namesArray,10,200,100)".
 
-Dans cette ligne, vous demandez à votre ordinateur de s'entraîner sur les données que vous lui fournissez. Ne touchez pas aux variables "data" et "namesArray", mais vous pouvez toucher au reste : le premier des trois chiffres correspond au nombre de courbes que vous voulez produire (ici 10). Le deuxième chiffre est ce qui donne le plus de mal à votre ordinateur : c'est le nombre de tours qu'il doit faire pour s'entraîner : vous pouvez le descendre autant que vous voulez, tant que c'est supérieur à 0. Enfin votre ordinateur va pour chaque ligne de données générer aléatoirement une fenêtre dans laquelle il va piocher ses résultats : vous pouvez diminuer la fenêtre. Cependant je ne vous le conseille pas, parce que le gain de temps n'est pas suffisamment important pour risquer de perdre en précision.
+	Dans cette ligne, vous demandez à votre ordinateur de s'entraîner sur les données que vous lui fournissez. Ne touchez pas aux variables "data" et "namesArray", mais vous pouvez toucher au reste : le premier des trois chiffres correspond au nombre de courbes que vous voulez produire (ici 10). Le deuxième chiffre est ce qui donne le plus de mal à votre ordinateur : c'est le nombre de tours qu'il doit faire pour s'entraîner : vous pouvez le descendre autant que vous voulez, tant que c'est supérieur à 0. Enfin votre ordinateur va pour chaque ligne de données générer aléatoirement une fenêtre dans laquelle il va piocher ses résultats : vous pouvez diminuer la fenêtre. Cependant je ne vous le conseille pas, parce que le gain de temps n'est pas suffisamment important pour risquer de perdre en précision.
 
-Voilà ! Je vous rappelle qu'il s'agit d'une version très basique encore, et qu'elle sera appelée à changer beaucoup dans les mois à venir. Si vous avez la moindre question, n'hésitez pas à la poser sur la boîte mail de l'ANR.
+	Voilà ! Je vous rappelle qu'il s'agit d'une version très basique encore, et qu'elle sera appelée à changer beaucoup dans les mois à venir. Si vous avez la moindre question, n'hésitez pas à la poser sur la boîte mail de l'ANR.
