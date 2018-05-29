@@ -20,6 +20,7 @@ import re
 import csv
 import matplotlib.pylab as plt
 import numpy as np
+import argparse
 
 
 print('This software generates a figure of profile clusters on a selected corpus \nusage: --dir path/to/your/source/dir --figname name_for_your_fig')
