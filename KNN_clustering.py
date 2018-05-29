@@ -31,13 +31,11 @@ args = parser.parse_args()
 if len(sys.argv) == 1:
     sys.exit()
 
-argsdir= os.path.join(args.dir, '')
-argsfig= os.path.join(args.figname, '')
 directory_dataset='dataset/'
-if not os.path.exists(directory):
-    os.makedirs(directory)
+if not os.path.exists(directory_dataset):
+    os.makedirs(directory_dataset)
 
-files_list=fnmatch.filter(os.listdir(path_to_folder), '*.xml')
+path_to_folder=args.dir
 
 files_list=fnmatch.filter(os.listdir(path_to_folder), '*.xml')
 
@@ -227,6 +225,6 @@ for idx,i in enumerate(mapOfTimeSeries.values()):
        ncol=2, mode="expand", borderaxespad=0.)
 
 
-fig.savefig(argsfig+'.png')
+fig.savefig(args.figname+'.png')
 plt.close(fig)
 
